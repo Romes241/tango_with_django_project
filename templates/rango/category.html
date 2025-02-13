@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 
-{% load staticfiles %}
 <html>
 
     <head>
@@ -20,16 +19,16 @@
                 {% else %}
                     <strong>No pages currently in category.</strong> 
                 {% endif %}
+                <a href="{% url 'rango:add_page' category.slug %}">Add Page</a> <br/>
             {% else %}
                 <p>The specified category does not exist.</p>
             {% endif %}
         </div>
 
-        <!-- Fix homepage link issue -->
         <div>
             <a href="{% url 'rango:index' %}">Back to Home</a> 
         </div>
 
     </body>
-    
+
 </html>
